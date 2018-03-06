@@ -1,4 +1,4 @@
-# SAVE PREDICTIONS from model
+#SAVE PREDICTIONS from model
 
 from PIL import Image
 import numpy as np
@@ -36,6 +36,7 @@ def calc_pred_importance(im_loc,net):
     net.blobs['data'].data[...] = in_
     net.forward()
     return net.blobs['loss'].data[0]
+
 
 # which images to compute predictions for
 imdir = "../../data/GDI/gd_val/" # CHANGETHIS

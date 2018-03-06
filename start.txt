@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#name: visimp
+#sudo docker build -t %name% .
+#sudo docker run --rm -e "WORKERS=3" -p 8000:8000 %name%
+#sudo docker stop %name%
+#docker save -o <save image to path> <image name>
+#docker load -i <path to image tar file>
+
+SWORKERS="${WORKERS:-2}"
+gunicorn --bind=0.0.0.0:8000 --workers=$SWORKERS server:app
